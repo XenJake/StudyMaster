@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StudyMate AI — Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>StudyMate AI</h1>
+    <nav>
+      <button id="nav-home">Home</button>
+      <button id="nav-tutor">AI Tutor</button>
+      <button id="nav-scheduler">Scheduler</button>
+      <button id="nav-flashcards">Flashcards</button>
+      <button id="nav-parent">Parent</button>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section id="home" class="page active">
+      <h2>Welcome — instant help & study plans</h2>
+      <p>Prototype demo: basic AI tutor, snap-to-solve simulation, scheduler and flashcards. Real AI integrations (LLMs, OCR) are placeholders and clearly marked.</p>
+
+      <div class="card">
+        <h3>Snap-to-Solve (Simulated)</h3>
+        <p>Upload an image of a problem (mock OCR). The app will simulate extracting a question and show a step-by-step solution.</p>
+        <input type="file" id="file-input" accept="image/*">
+        <button id="btn-snap">Process Image</button>
+        <pre id="snap-output" class="output"></pre>
+      </div>
+
+      <div class="card">
+        <h3>Quick Ask</h3>
+        <input id="quick-question" placeholder="Type a homework question (e.g., integrate x^2)" />
+        <button id="ask-btn">Ask AI Tutor</button>
+        <div id="quick-answer" class="output"></div>
+      </div>
+    </section>
+
+    <section id="tutor" class="page">
+      <h2>AI Tutor Chat</h2>
+      <div id="chat" class="chat-window"></div>
+      <div class="chat-controls">
+        <input id="chat-input" placeholder="Ask the tutor..." />
+        <button id="send-chat">Send</button>
+      </div>
+    </section>
+
+    <section id="scheduler" class="page">
+      <h2>Study Scheduler</h2>
+      <div class="card">
+        <label>Set a Goal: <input id="goal-text" placeholder="e.g., Prepare for Math test" /></label>
+        <label>Days per week:
+          <select id="days-week"><option>3</option><option selected>5</option><option>7</option></select>
+        </label>
+        <label>Daily minutes: <input id="minutes" type="number" value="30" min="5" /></label>
+        <button id="generate-plan">Generate Plan</button>
+      </div>
+      <div class="card">
+        <h3>Your Plan</h3>
+        <ol id="plan-list"></ol>
+      </div>
+    </section>
+
+    <section id="flashcards" class="page">
+      <h2>Flashcards (SRS Simulation)</h2>
+      <div class="card">
+        <textarea id="fc-input" placeholder="Paste notes, homework, or key points here"></textarea>
+        <button id="gen-cards">Generate Flashcards</button>
+      </div>
+      <div class="card">
+        <div id="fc-box" class="flashcard-box"></div>
+        <div class="fc-controls">
+          <button id="fc-known">I knew it</button>
+          <button id="fc-unknown">I didn't know</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="parent" class="page">
+      <h2>Parent Dashboard (Demo)</h2>
+      <div class="card">
+        <h3>Weekly Summary</h3>
+        <ul id="parent-summary">
+          <li>Assignments completed: <span id="ps-completed">3</span></li>
+          <li>Average study minutes/day: <span id="ps-minutes">28</span></li>
+          <li>Areas to improve: <span id="ps-areas">Algebra, Grammar</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>StudyMate AI Prototype — No real AI connected. Replace placeholders with real LLM/OCR/TTS integrations.</small>
+  </footer>
+
+<script src="app.js"></script>
+</body>
+</html>
